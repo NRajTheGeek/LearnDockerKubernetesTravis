@@ -1,0 +1,3 @@
+# help CI on Github
+service:
+    - docker

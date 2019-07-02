@@ -1,0 +1,19 @@
+version: "3.0"
+
+networks:
+    neeraj:
+        external: true
+
+services:
+    nodeapp:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        image: neeraj/nodeapp
+        environment:
+            PORT: 3002
+        command: "npm start"
+        ports:
+            - "3002:3002"
+        networks:
+            - neeraj
