@@ -1,10 +1,9 @@
 # help CI on Github
-
-service:
+sudo: required
+services:
     - docker
 
 before_install:
-    # - docker login -u $DOCKER_ID -p "$DOCKER_SECRET"
     - docker build -t neeraj/react-app -f Dockerfile . 
 
 script:
