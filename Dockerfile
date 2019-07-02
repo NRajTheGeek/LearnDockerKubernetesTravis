@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY ./www/package*.json ./
 RUN npm install
-COPY . .
+COPY ./www .
 RUN npm run build
 
 
