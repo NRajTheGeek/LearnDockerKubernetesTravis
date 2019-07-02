@@ -1,7 +1,6 @@
 ## setting up a base image
 FROM node:alpine as builder
-RUN mkdir -p app
-WORKDIR /app
+WORKDIR '/app'
 
 COPY ./www/package*.json ./
 RUN npm install
