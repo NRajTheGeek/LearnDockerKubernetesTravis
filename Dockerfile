@@ -3,11 +3,11 @@ FROM node:10.12.0 as builder
 RUN mkdir -p app
 WORKDIR /app
 
-COPY ./www/package.json ./
-COPY ./www/public ./public
-COPY ./www/src ./src
+COPY ./www/package*.json ./
 RUN npm install
+COPY . .
 RUN npm run build
+
 
 FROM nginx
 EXPOSE 80
