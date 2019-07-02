@@ -1,5 +1,5 @@
 ## setting up a base image
-FROM node:10.12.0
+FROM node:10.12.0 as builder
 RUN mkdir -p app
 WORKDIR /app
 
