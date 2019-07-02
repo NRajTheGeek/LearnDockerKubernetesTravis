@@ -8,3 +8,16 @@ before_install:
 
 script:
     - docker run neeraj/react-app npm run test -- --coverage
+
+deploy:
+    provider: elasticbeanstalk
+    region: "ap-south-1"
+    app: "AWSReactTest"
+    env: "Awsreacttest"
+    bucket_name: "elasticbeanstalk-ap-south-1-311778223447"
+    bucket_path: "AWSReactTest"
+    on: 
+        branch: "master"
+    access_key_id:  $AWS_ACCESS_ID
+    secret_access_key:
+        secure: "$AWS_SECRET_KEY"
