@@ -4,10 +4,11 @@ RUN mkdir -p app
 WORKDIR /app
 
 COPY ./www/package.json ./
-RUN npm install
-
 COPY ./www/public ./public
 COPY ./www/src ./src
+RUN npm install
+RUN npm run build
 
+FROM nginx
 EXPOSE 80
-CMD ["npm", "start"]
+COPY --from=builder /app/build /usr/build/share/nginx/html
