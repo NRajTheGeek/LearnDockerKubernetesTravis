@@ -7,4 +7,4 @@ before_install:
     - docker build -t neeraj/react-app -f Dockerfile . 
 
 script:
-    - docker run neeraj/react-app npm run test -- --coverege
+    - docker run neeraj/react-app npm run test -- --coverage
